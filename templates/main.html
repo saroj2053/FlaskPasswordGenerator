@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Main Page
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+  <h1 class="display-4 heading-text">Random PyPassword Generator</h1>
+  <form method="post">
+    <div class="form-group">
+      {{ form.hidden_tag() }}
+      {{ form.nr_letters.label(class='input-query') }} {{form.nr_letters(class="form-control")}}
+    </div>
+    <div class="form-group">
+      {{ form.hidden_tag() }}
+      {{ form.nr_symbols.label(class='input-query') }} {{form.nr_symbols(class='form-control')}}
+    </div>
+    <div class="form-group">
+      {{ form.hidden_tag() }}
+      {{ form.nr_numbers.label(class='input-query') }} {{form.nr_numbers(class='form-control')}}
+    </div>
+    <div class="form-group">
+      {{ form.submit(class='btn btn-block btn-outline-warning') }}
+    </div>
+
+  </form>
+{% endblock %}

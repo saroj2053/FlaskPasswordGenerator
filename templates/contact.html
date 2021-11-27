@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Contact
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="text-box">
+    <h1>Contact</h1>
+    <p><span class="form-fillup"></span></p>
+  </div>
+  <form method="post">
+    {{form.hidden_tag()}}
+    {{form.name.label(class="heading-text")}}{{form.name(class="form-control shorten-width")}}
+    <br>
+    {{form.hidden_tag()}}
+    {{form.email.label(class="heading-text")}}{{form.email(class="form-control shorten-width")}}
+    <br>
+    {{form.hidden_tag()}}
+    {{form.queries.label(class="heading-text")}}{{form.queries(class="form-control shorten-width")}}
+    <br>
+    {{form.submit(class="btn btn-block btn-outline-info btnSubmit")}}
+  </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script type="text/javascript">
+  var typed = new Typed(".form-fillup", {
+    strings: ['Please fill up the following form'],
+    typeSpeed: 100,
+    backSpeed: 100,
+    loop: true
+  })
+</script>
+
+
+{% endblock %}
